@@ -1,0 +1,46 @@
+import { addScaleCorrector } from "framer-motion";
+import type { Config } from "tailwindcss";
+
+const config = {
+  content: [
+    "./src/app/**/*.{js,ts,jsx,tsx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx}",
+    "./src/sections/**/*.{js,ts,jsx,tsx}",
+    "./src/components/**/*.{js,ts,jsx,tsx}",
+  ],
+  safelist: ["animate-ping-large"],
+  theme: {
+    screens: {
+      sm: "375px",
+      md: "768px",
+      lg: "1200px",
+    },
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: "1rem",
+        md: "2rem",
+      },
+    },
+    extend: {
+      fontFamily: {
+        sans: "var(--font-inter-sans)",
+        serif: "var(--font-calis-serif)",
+      },
+    },
+    keyframes: {
+      "ping-large": {
+        "75%, 100%": {
+          transform: "scale(3)",
+          opacity: "0",
+        },
+      },
+    },
+    animation: {
+      "ping-large": "ping-large 1s ease-in-out infinite",
+    },
+  },
+  plugins: [],
+};
+
+export default config;
